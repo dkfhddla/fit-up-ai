@@ -15,6 +15,17 @@ View your app in AI Studio: https://ai.studio/apps/drive/1jlwLt0Z-aNOkoNSshqxbVv
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2. Run the app:
+    `npm run dev`
+
+## AI service temporarily paused
+
+Direct browser access to Gemini is disabled after an API key exposure.
+The UI can be built and opened, but person detection and image generation
+remain unavailable until an authenticated, rate-limited server API is added.
+
+Do not put Gemini credentials in frontend environment variables, source files,
+or import maps. Vite environment-variable exposure is disabled, including
+existing `VITE_*` deployment variables. Remove the exposed key from deployment
+settings, revoke it in Google AI Studio, and retire affected old deployments.
+Any replacement key must be stored exclusively on the server.
